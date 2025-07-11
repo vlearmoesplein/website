@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "nl" }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {{- if .IsHome }}
+            {{ .Site.Title }}
+        {{- else }}
+            {{ .Title }} | {{ .Site.Title }}
+        {{- end }}
+    </title>
+    <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+    <meta name="keywords" content="{{ .Site.Params.keywords }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ .Title | default .Site.Title }}">
+    <meta property="og:description" content="{{ .Description | default .Site.Params.description }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta property="twitter:title" content="{{ .Title | default .Site.Title }}">
+    <meta property="twitter:description" content="{{ .Description | default .Site.Params.description }}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+</head>
+
+<body{{ if .IsHome }} class="home"{{ end }}>
+    {{ partial "header.html" . }}
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <!-- Scripts -->
+    <script src="{{ "js/main.js" | relURL }}"></script>
+    {{ if .IsHome }}
+    <script src="{{ "js/countdown.js" | relURL }}"></script>
+    {{ end }}
+    
+    <!-- reCAPTCHA -->
+    {{ if .Site.Params.contact.recaptchaSiteKey }}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {{ end }}
+</body>
+</html>

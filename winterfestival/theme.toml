@@ -1,0 +1,61 @@
+name = "winterfestival"
+license = "MIT"
+licenselink = "https://github.com/vlearmoesplein/winterfestival-theme/blob/main/LICENSE"
+description = "A winter festival theme for Hugo static sites"
+homepage = "https://vlearmoesplein.nl"
+tags = ["festival", "events", "winter", "music", "responsive", "modern"]
+features = ["responsive", "mobile-friendly", "seo-optimized", "accessible"]
+min_version = "0.110.0"
+
+[author]
+name = "Vlearmoesplein Team"
+homepage = "https://vlearmoesplein.nl"
+email = "info@vlearmoesplein.nl"
+
+# Theme taxonomy
+[taxonomies]
+category = "categories"
+tag = "tags"
+artist = "artists"
+event_type = "event_types"
+
+# Theme params
+[params]
+version = "1.0.0"
+description = "Winter Festival theme for Hugo - perfect for event websites"
+
+# Festival specific
+[params.festival]
+name = "Winterfestival Neede"
+year = "2024"
+dates = "15-17 December 2024"
+location = "Centrum Neede"
+
+# Social media
+[params.social]
+facebook = ""
+instagram = ""
+twitter = ""
+linkedin = ""
+youtube = ""
+
+# Contact information
+[params.contact]
+email = "info@vlearmoesplein.nl"
+address = "Marktplein 1, 7161 DA Neede"
+
+# Features
+[params.features]
+responsive = true
+dark_mode = false
+search = false
+comments = false
+analytics = true
+cookie_consent = true
+
+# SEO
+[params.seo]
+meta_description = "Het grootste winterfestival van Neede"
+meta_keywords = "winterfestival, neede, evenement, muziek, festival"
+og_image = "/images/og-image.jpg"
+twitter_card = "summary_large_image"
