@@ -3,7 +3,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <img
-          src="{{ .Site.Params.organization.logo | relURL }}"
+          src="{{ .Site.Params.organization.logo | absURL }}"
           alt="{{ .Site.Params.organization.logoAlt | default .Site.Params.organization.name }}"
           class="footer-logo"
           {{
@@ -80,10 +80,10 @@
           {{ if .Site.Params.tickets.enabled }}
           <li><a href="/tickets/">Tickets</a></li>
           {{ end }}
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/huisregels/">Huisregels</a></li>
-          <li><a href="/over-ons/">Over Ons</a></li>
+          <li><a href="{{ "contact/" | relURL }}">Contact</a></li>
+          <li><a href="{{ "faq/" | relURL }}">FAQ</a></li>
+          <li><a href="{{ "huisregels/" | relURL }}">Huisregels</a></li>
+          <li><a href="{{ "over-ons/" | relURL }}">Over Ons</a></li>
         </ul>
       </div>
     </div>

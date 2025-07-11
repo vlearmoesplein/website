@@ -5,7 +5,7 @@
                 <a href="{{ .Site.BaseURL }}" class="brand-link">
                     {{ if .Site.Params.organization.logo }}
                     <img
-                        src="{{ .Site.Params.organization.logo | relURL }}"
+                        src="{{ .Site.Params.organization.logo | absURL }}"
                         alt="{{ .Site.Params.organization.logoAlt | default .Site.Params.organization.name }}"
                         class="brand-logo"
                         {{ if .Site.Params.organization.logoWidth }}width="{{ .Site.Params.organization.logoWidth }}"{{ end }}
@@ -32,7 +32,7 @@
                     {{ range .Site.Menus.main }}
                     {{ if ne .URL "/tickets/" }}
                     <li class="nav-item">
-                        <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">
+                        <a href="{{ .URL | relURL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">
                             {{ .Name }}
                         </a>
                     </li>
