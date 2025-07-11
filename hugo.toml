@@ -1,4 +1,4 @@
-baseURL = 'https://vlearmoesplein.nl'
+baseURL = 'https://vlearmoesplein.github.io/website/'
 languageCode = 'nl-NL'
 title = 'Stichting Vlearmoesplein'
 theme = 'winterfestival'

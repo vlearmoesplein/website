@@ -34,14 +34,6 @@ Tot nu toe zijn er kleine evenementen georganiseerd door onze stichting: de open
     <img src="/images/overview.jpg" alt="Overzicht van Vlearmoesplein" />
     <p>Het Vlearmoesplein - ons thuisbasis voor evenementen</p>
   </div>
-  <div class="image-item">
-    <img src="/images/vlearmoesplein-event.jpg" alt="Evenement op Vlearmoesplein" />
-    <p>Een van onze evenementen in volle gang</p>
-  </div>
-  <div class="image-item">
-    <img src="/images/vlearmoesplein-setup.jpg" alt="Opbouw evenement" />
-    <p>Onze vrijwilligers tijdens de opbouw</p>
-  </div>
 </div>
 
 ## Ons Team
