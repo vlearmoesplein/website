@@ -34,7 +34,7 @@
         <div class="card text-center">
             <h3>Vragen over {{ .Title }}?</h3>
             <p>Neem gerust contact met ons op voor meer informatie.</p>
-            <a href="/contact/" class="btn btn-primary">Contact Opnemen</a>
+            <a href="{{ "contact/" | relURL }}" class="btn btn-primary">Contact Opnemen</a>
         </div>
     </section>
     {{ end }}
