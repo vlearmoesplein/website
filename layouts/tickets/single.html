@@ -1,3 +1,7 @@
+{{ if not .Site.Params.tickets.enabled }}
+  {{ errorf "404 page not found" }}
+{{ end }}
+
 {{ define "main" }}
   <div class="content">
     <div class="page-header">
