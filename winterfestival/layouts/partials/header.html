@@ -153,9 +153,9 @@
             <p class="hero-description">Georganiseerd door {{ .Site.Params.organization.name | default .Site.Title }}</p>
             <div class="hero-actions">
                 {{ if .Site.Params.tickets.enabled }}
-                <a href="/tickets/" class="btn btn-primary">Tickets Kopen</a>
+                <a href="{{ "tickets/" | relURL }}" class="btn btn-primary">Tickets Kopen</a>
                 {{ end }}
-                <a href="/winterfestival-2025/" class="btn btn-secondary">Meer Info</a>
+                <a href="{{ "winterfestival-2025/" | relURL }}" class="btn btn-secondary">Meer Info</a>
             </div>
         </div>
         <div class="hero-background">

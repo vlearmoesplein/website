@@ -14,13 +14,13 @@
         <p>De pagina die je probeert te bezoeken bestaat niet (meer) of is verplaatst. Misschien kunnen deze links je helpen:</p>
 
         <div style="display: grid; gap: 1rem; margin: 2rem 0;">
-            <a href="/" class="btn btn-primary">🏠 Terug naar Home</a>
-            <a href="/winterfestival-2025/" class="btn btn-secondary">🎪 Winterfestival 2025</a>
+            <a href="{{ "/" | relURL }}" class="btn btn-primary">🏠 Terug naar Home</a>
+            <a href="{{ "winterfestival-2025/" | relURL }}" class="btn btn-secondary">🎪 Winterfestival 2025</a>
             {{ if .Site.Params.tickets.enabled }}
-            <a href="/tickets/" class="btn btn-secondary">🎟️ Tickets</a>
+            <a href="{{ "tickets/" | relURL }}" class="btn btn-secondary">🎟️ Tickets</a>
             {{ end }}
-            <a href="/bezoeken/" class="btn btn-secondary">ℹ️ Praktische Info</a>
-            <a href="/contact/" class="btn btn-secondary">📞 Contact</a>
+            <a href="{{ "bezoeken/" | relURL }}" class="btn btn-secondary">ℹ️ Praktische Info</a>
+            <a href="{{ "contact/" | relURL }}" class="btn btn-secondary">📞 Contact</a>
         </div>
 
         <hr style="margin: 2rem 0; border: none; border-top: 1px solid #e5e7eb;">
@@ -39,7 +39,7 @@
         <p>Terwijl je hier bent, waarom blijf je niet op de hoogte van al onze evenementen?</p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
             {{ if .Site.Params.tickets.enabled }}
-            <a href="/tickets/" class="btn btn-primary">Tickets Kopen</a>
+            <a href="{{ "tickets/" | relURL }}" class="btn btn-primary">Tickets Kopen</a>
             {{ end }}
             <a href="https://instagram.com/winterfestivalneede" target="_blank" class="btn btn-secondary">Volg ons op Instagram</a>
         </div>
