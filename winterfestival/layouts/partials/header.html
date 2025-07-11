@@ -1,0 +1,166 @@
+<header class="site-header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="{{ .Site.BaseURL }}" class="brand-link">
+                    {{ if .Site.Params.organization.logo }}
+                    <img
+                        src="{{ .Site.Params.organization.logo | relURL }}"
+                        alt="{{ .Site.Params.organization.logoAlt | default .Site.Params.organization.name }}"
+                        class="brand-logo"
+                        {{ if .Site.Params.organization.logoWidth }}width="{{ .Site.Params.organization.logoWidth }}"{{ end }}
+                        {{ if .Site.Params.organization.logoHeight }}height="{{ .Site.Params.organization.logoHeight }}"{{ end }}
+                    >
+                    {{ else }}
+                    <h1>{{ .Site.Params.organization.name | default .Site.Title }}</h1>
+                    {{ if .Site.Params.organization.tagline }}
+                    <p class="brand-tagline">{{ .Site.Params.organization.tagline }}</p>
+                    {{ end }}
+                    {{ end }}
+                </a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    {{ $ticketsEnabled := .Site.Params.tickets.enabled }}
+                    {{ range .Site.Menus.main }}
+                    {{ if ne .URL "/tickets/" }}
+                    <li class="nav-item">
+                        <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">
+                            {{ .Name }}
+                        </a>
+                    </li>
+                    {{ else if $ticketsEnabled }}
+                    <li class="nav-item">
+                        <a href="{{ .URL }}" class="nav-link{{ if $.IsMenuCurrent "main" . }} active{{ end }}">
+                            {{ .Name }}
+                        </a>
+                    </li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+
+                <div class="nav-social">
+                    {{ if .Site.Params.social.facebook }}
+                    <a
+                        href="{{ .Site.Params.social.facebook }}"
+                        target="_blank"
+                        rel="noopener"
+                        class="nav-social-link facebook-link"
+                        title="Facebook"
+                    >
+                        <img
+                            src="/images/facebook-logo.svg"
+                            alt="Facebook"
+                            class="nav-social-icon"
+                        />
+                    </a>
+                    {{ end }}
+                    {{ if .Site.Params.social.instagram }}
+                    <a
+                        href="{{ .Site.Params.social.instagram }}"
+                        target="_blank"
+                        rel="noopener"
+                        class="nav-social-link instagram-link"
+                        title="Instagram"
+                    >
+                        <img
+                            src="/images/instagram-logo.svg"
+                            alt="Instagram"
+                            class="nav-social-icon"
+                        />
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sponsor Slider -->
+    {{ if and .Site.Params.sponsors.enabled .Site.Params.sponsors.items }}
+    <div class="sponsor-slider-container">
+        <div class="sponsor-slider">
+            <div class="sponsor-track" id="sponsorTrack">
+                {{ range .Site.Params.sponsors.items }}
+                <div class="sponsor-slide">
+                    <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}">
+                        <img src="{{ .logo | relURL }}" alt="{{ .name }}" class="sponsor-logo">
+                    </a>
+                </div>
+                {{ end }}
+                <!-- Duplicate slides for seamless infinite loop -->
+                {{ range .Site.Params.sponsors.items }}
+                <div class="sponsor-slide">
+                    <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}">
+                        <img src="{{ .logo | relURL }}" alt="{{ .name }}" class="sponsor-logo">
+                    </a>
+                </div>
+                {{ end }}
+                <!-- Triple slides for extra smooth loop -->
+                {{ range .Site.Params.sponsors.items }}
+                <div class="sponsor-slide">
+                    <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}">
+                        <img src="{{ .logo | relURL }}" alt="{{ .name }}" class="sponsor-logo">
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="sponsor-label">
+            <span>Onze sponsors</span>
+        </div>
+    </div>
+    {{ end }}
+
+    {{ if .IsHome }}
+    <!-- Countdown Timer -->
+    {{ if and .Site.Params.countdown.enabled .Site.Params.countdown.targetDate }}
+    <div class="countdown-container">
+        <div class="countdown-content">
+            <h3 class="countdown-title">{{ .Site.Params.countdown.title | default "Festival begint over:" }}</h3>
+            <div class="countdown-timer" id="countdownTimer" data-target="{{ .Site.Params.countdown.targetDate }}">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">{{ index .Site.Params.countdown.labels 0 | default "dagen" }}</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">{{ index .Site.Params.countdown.labels 1 | default "uren" }}</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">{{ index .Site.Params.countdown.labels 2 | default "minuten" }}</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">{{ index .Site.Params.countdown.labels 3 | default "seconden" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h2 class="hero-title">{{ .Site.Params.festival.currentEvent }}</h2>
+            <p class="hero-subtitle">{{ .Site.Params.festival.dates }} | {{ .Site.Params.festival.location }}</p>
+            <p class="hero-description">Georganiseerd door {{ .Site.Params.organization.name | default .Site.Title }}</p>
+            <div class="hero-actions">
+                {{ if .Site.Params.tickets.enabled }}
+                <a href="/tickets/" class="btn btn-primary">Tickets Kopen</a>
+                {{ end }}
+                <a href="/winterfestival-2025/" class="btn btn-secondary">Meer Info</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <!-- Background image or video can be added here -->
+        </div>
+    </div>
+    {{ end }}
+</header>

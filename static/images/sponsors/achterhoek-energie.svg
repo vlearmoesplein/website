@@ -1,0 +1,25 @@
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="120" height="60" fill="#ffffff" stroke="#e5e7eb" stroke-width="1" rx="4"/>
+
+  <!-- Energy symbol - lightning bolt -->
+  <path d="M20,15 L30,15 L25,25 L32,25 L18,45 L25,35 L18,35 Z" fill="#22c55e" stroke="#16a34a" stroke-width="1"/>
+
+  <!-- Wind turbine -->
+  <circle cx="35" cy="30" r="2" fill="#1f2937"/>
+  <path d="M35,28 L35,20 M33,30 L26,33 M37,30 L44,27" stroke="#1f2937" stroke-width="2"/>
+  <circle cx="35" cy="20" r="1" fill="#22c55e"/>
+  <circle cx="26" cy="33" r="1" fill="#22c55e"/>
+  <circle cx="44" cy="27" r="1" fill="#22c55e"/>
+
+  <!-- Text -->
+  <text x="50" y="20" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#22c55e">
+    Achterhoek
+  </text>
+  <text x="50" y="33" font-family="Arial, sans-serif" font-size="12" font-weight="800" fill="#1f2937">
+    ENERGIE
+  </text>
+  <text x="50" y="46" font-family="Arial, sans-serif" font-size="7" fill="#6b7280">
+    Duurzame energie
+  </text>
+</svg>

@@ -1,0 +1,174 @@
+baseURL = 'https://vlearmoesplein.nl'
+languageCode = 'nl-NL'
+title = 'Stichting Vlearmoesplein'
+theme = 'winterfestival'
+
+[params]
+description = "Stichting Vlearmoesplein - Winterfestivals en evenementen in Neede"
+keywords = "vlearmoesplein, evenementen, neede, winterfestival, festival, organisatie"
+
+[params.colors]
+primary = "#4d7bc2"   # Vlearmoesplein Blue
+secondary = "#e89940" # Vlearmoesplein Orange
+
+[params.organization]
+name = "Stichting Vlearmoesplein"
+tagline = "Winterfestival"
+logo = "/images/vlearmoesplein-logo.png"
+logoAlt = "Stichting Vlearmoesplein Logo"
+logoWidth = "220"
+logoHeight = "80"
+
+[params.festival]
+name = "Winterfestival Neede"
+currentEvent = "Winterfestival 2025"
+dates = "13 December 2025"
+location = "Vlearmoesplein Neede"
+ticketUrl = "https://tickets.eventbrite.com/e/winterfestival-neede-2025-tickets"
+
+[params.tickets]
+enabled = false
+url = "https://tickets.eventbrite.com/e/winterfestival-neede-2025-tickets"
+
+[params.countdown]
+enabled = true
+targetDate = "2025-12-13T18:00:00+01:00"
+title = "Festival begint over:"
+labels = ["dagen", "uren", "minuten", "seconden"]
+
+[params.contact]
+email = "info@vlearmoesplein.nl"
+address = "Vlearmoesplein, 7161 HZ Neede"
+formEndpoint = "https://formspree.io/f/xyzjrlbv"
+recaptchaSiteKey = ""
+
+[params.social]
+facebook = "https://www.facebook.com/p/Stichting-Vlearmoes-plein-100064504639495/"
+instagram = "https://www.instagram.com/stichting_vlearmoes_plein/"
+
+[params.sponsors]
+enabled = true
+
+[[params.sponsors.items]]
+name = "Gemeente Neede"
+logo = "/images/sponsors/gemeente-neede.svg"
+url = "https://www.neede.nl"
+
+[[params.sponsors.items]]
+name = "Rabobank Oost Gelderland"
+logo = "/images/sponsors/rabobank.svg"
+url = "https://www.rabobank.nl"
+
+[[params.sponsors.items]]
+name = "Grand Café De Kater"
+logo = "/images/sponsors/de-kater.svg"
+url = "https://www.dekater.nl"
+
+[[params.sponsors.items]]
+name = "Achterhoek Energie"
+logo = "/images/sponsors/achterhoek-energie.svg"
+url = "https://www.achterhoekenergie.nl"
+
+[[params.sponsors.items]]
+name = "Hotel De Kruishoeve"
+logo = "/images/sponsors/kruishoeve.svg"
+url = "https://www.kruishoeve.nl"
+
+[[params.sponsors.items]]
+name = "Needse Ondernemers"
+logo = "/images/sponsors/needse-ondernemers.svg"
+url = "https://www.needse-ondernemers.nl"
+
+[[params.sponsors.items]]
+name = "Local Business Partner"
+logo = "/images/sponsors/local-partner.svg"
+url = "https://www.local-partner.nl"
+
+[menu]
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 10
+
+[[menu.main]]
+name = "Winterfestival 2025"
+url = "/winterfestival-2025/"
+weight = 20
+
+[[menu.main]]
+name = "Bezoeken"
+url = "/bezoeken/"
+weight = 30
+
+[[menu.main]]
+name = "Tickets"
+url = "/tickets/"
+weight = 40
+
+[[menu.main]]
+name = "Evenementen"
+url = "/evenementen/"
+weight = 50
+
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 60
+
+[[menu.main]]
+name = "FAQ"
+url = "/faq/"
+weight = 70
+
+[[menu.main]]
+name = "Over Ons"
+url = "/over-ons/"
+weight = 80
+
+# GitHub Pages optimization
+[build]
+writeStats = true
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = "10s"
+
+[caches.getcsv]
+dir = ":cacheDir/:project"
+maxAge = "10s"
+
+[caches.images]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
+
+[caches.assets]
+dir = ":resourceDir/_gen"
+maxAge = "720h"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+style = "github"
+lineNos = false
+codeFences = true
+guessSyntax = true
+
+[minify]
+[minify.tdewolff]
+[minify.tdewolff.html]
+keepWhitespace = false
+
+[minify.tdewolff.css]
+precision = 0
+
+[minify.tdewolff.js]
+precision = 0
+
+# GitHub Pages compatibility
+[security]
+[security.funcs]
+getenv = ["^HUGO_", "^GIT_"]
