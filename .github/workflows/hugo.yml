@@ -46,7 +46,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
-          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+          hugo --gc --minify --baseURL "https://vlearmoesplein.github.io/website/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -60,3 +60,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Output GitHub Pages URL
+        run: |
+          echo "🚀 Deployment successful!"
+          echo "📱 Your site is now live at: https://vlearmoesplein.github.io/website/"
+          echo "🔗 GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
