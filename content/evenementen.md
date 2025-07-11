@@ -116,7 +116,7 @@ description: "Overzicht van alle evenementen georganiseerd door Stichting Vlearm
 
 <!-- Past Events -->
 <div>
-  <div class="evenementen-section-title">⏳ Afgelopen Evenementen</div>
+  <div class="evenementen-section-title evenementen-section-title--past">⏳ Afgelopen Evenementen</div>
   <div class="event-cards">
     <div class="event-card past">
       <div class="event-title">Winterfestival 2024</div>
