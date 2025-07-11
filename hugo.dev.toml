@@ -1,4 +1,4 @@
-baseURL = 'https://vlearmoesplein.github.io/website/'
+baseURL = 'http://localhost:1313/'
 languageCode = 'nl-NL'
 title = 'Stichting Vlearmoesplein'
 theme = 'winterfestival'
@@ -125,13 +125,11 @@ name = "Over Ons"
 url = "/over-ons/"
 weight = 80
 
-# GitHub Pages optimization
+# Development settings
 [build]
 writeStats = true
 
-# Ensure static files are copied correctly
 [static]
-# This ensures all static files are copied to the output directory
 
 [caches]
 [caches.getjson]
@@ -172,7 +170,7 @@ precision = 0
 [minify.tdewolff.js]
 precision = 0
 
-# GitHub Pages compatibility
+# Development compatibility
 [security]
 [security.funcs]
-getenv = ["^HUGO_", "^GIT_"]
+getenv = ["^HUGO_", "^GIT_"] 

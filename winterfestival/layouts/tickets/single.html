@@ -1,17 +1,17 @@
-{{ if not .Site.Params.tickets.enabled }}
-  {{ errorf "404 page not found" }}
-{{ end }}
-
 {{ define "main" }}
-<div class="content">
-    <div class="page-header">
-        <h1 class="page-title">{{ .Title }}</h1>
-        {{ if .Description }}
-        <p class="page-subtitle">{{ .Description }}</p>
-        {{ end }}
+  {{ if not .Site.Params.tickets.enabled }}
+    {{ errorf "404 page not found" }}
+  {{ else }}
+    <div class="content">
+        <div class="page-header">
+            <h1 class="page-title">{{ .Title }}</h1>
+            {{ if .Description }}
+            <p class="page-subtitle">{{ .Description }}</p>
+            {{ end }}
+        </div>
+        <article class="page-content">
+            {{ .Content }}
+        </article>
     </div>
-    <article class="page-content">
-        {{ .Content }}
-    </article>
-</div>
+  {{ end }}
 {{ end }}

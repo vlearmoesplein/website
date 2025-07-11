@@ -318,3 +318,23 @@ Dit project is gelicenseerd onder de MIT License - zie het [LICENSE](LICENSE) be
 **Gebouwd met ❤️ voor het Winterfestival Neede**
 
 *Laatste update: December 2024*
+
+## Environment Variables
+
+To use Google reCAPTCHA locally, set the site key as an environment variable:
+
+1. Create a `.env` file in the project root with:
+   
+   ```env
+   RECAPTCHA_SITE_KEY=your-local-site-key
+   ```
+
+2. Or export it manually before running Hugo:
+   
+   ```sh
+   export RECAPTCHA_SITE_KEY=your-local-site-key
+   ```
+
+The Hugo config will automatically use this value for `recaptchaSiteKey`.
+
+In production (GitHub Actions), set the secret `RECAPTCHA_SITE_KEY` in your repository settings.

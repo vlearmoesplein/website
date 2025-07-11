@@ -31,8 +31,7 @@ Tot nu toe zijn er kleine evenementen georganiseerd door onze stichting: de open
 
 <div class="image-gallery">
   <div class="image-item">
-    <img src="{{ "images/overview.jpg" | absURL }}" alt="Overzicht van Vlearmoesplein" />
-    <p>Het Vlearmoesplein - ons thuisbasis voor evenementen</p>
+    {{< img src="images/overview.jpg" alt="Overzicht van Vlearmoesplein" caption="Het Vlearmoesplein - ons thuisbasis voor evenementen" class="image-item" >}}
   </div>
 </div>
 
@@ -40,12 +39,10 @@ Tot nu toe zijn er kleine evenementen georganiseerd door onze stichting: de open
 
 <div class="team-gallery">
   <div class="team-image">
-    <img src="{{ "images/team.jpg" | absURL }}" alt="Het team van Stichting Vlearmoesplein" />
-    <p>Ons enthousiaste team van vrijwilligers</p>
+    {{< img src="images/team.jpg" alt="Het team van Stichting Vlearmoesplein" caption="Ons enthousiaste team van vrijwilligers" class="team-image" >}}
   </div>
   <div class="team-image">
-    <img src="{{ "images/crew.jpeg" | absURL }}" alt="Vrijwilligers van Stichting Vlearmoesplein" />
-    <p>Onze vrijwilligers in actie tijdens evenementen</p>
+    {{< img src="images/crew.jpeg" alt="Vrijwilligers van Stichting Vlearmoesplein" caption="Onze vrijwilligers in actie tijdens evenementen" class="team-image" >}}
   </div>
 </div>
 
