@@ -60,3 +60,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Output GitHub Pages URL
+        run: |
+          echo "🚀 Deployment successful!"
+          echo "📱 Your site is now live at: https://vlearmoesplein.github.io/website/"
+          echo "🔗 GitHub Pages URL: ${{ steps.deployment.outputs.page_url }}"
