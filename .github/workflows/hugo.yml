@@ -48,6 +48,13 @@ jobs:
         run: |
           hugo --gc --minify --baseURL "https://vlearmoesplein.github.io/website/"
 
+      - name: Verify build output
+        run: |
+          echo "Checking if images are in the build output..."
+          ls -la public/images/
+          ls -la public/images/sponsors/
+          echo "Build verification complete"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

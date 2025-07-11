@@ -129,6 +129,10 @@ weight = 80
 [build]
 writeStats = true
 
+# Ensure static files are copied correctly
+[static]
+# This ensures all static files are copied to the output directory
+
 [caches]
 [caches.getjson]
 dir = ":cacheDir/:project"
